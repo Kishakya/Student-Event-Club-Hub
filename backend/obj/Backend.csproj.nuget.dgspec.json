@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\03cri\\Documents\\git\\Student_Event_Club_Hub\\backend\\Backend.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\03cri\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+    "C:\\Users\\mgkis\\OneDrive\\Documents\\Y3S1\\Mini-Hackathon\\backend\\Backend.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\mgkis\\OneDrive\\Documents\\Y3S1\\Mini-Hackathon\\backend\\Backend.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mgkis\\OneDrive\\Documents\\Y3S1\\Mini-Hackathon\\backend\\Backend.csproj",
+        "projectName": "Backend",
+        "projectPath": "C:\\Users\\mgkis\\OneDrive\\Documents\\Y3S1\\Mini-Hackathon\\backend\\Backend.csproj",
+        "packagesPath": "C:\\Users\\mgkis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mgkis\\OneDrive\\Documents\\Y3S1\\Mini-Hackathon\\backend\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mgkis\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> d603614e55707253b4f786121950688a9d97c34e
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,6 +49,14 @@
           "warnAsError": [
             "NU1605"
           ]
+<<<<<<< HEAD
+=======
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+>>>>>>> d603614e55707253b4f786121950688a9d97c34e
         }
       },
       "frameworks": {
@@ -72,7 +97,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.129/PortableRuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.424/PortableRuntimeIdentifierGraph.json"
+>>>>>>> d603614e55707253b4f786121950688a9d97c34e
         }
       }
     }
