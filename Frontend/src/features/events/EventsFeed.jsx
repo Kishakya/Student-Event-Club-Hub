@@ -65,9 +65,12 @@ function EventsFeed() {
     <section id="events-feed">
       <div className="events-feed-header">
         <h1>Upcoming Events</h1>
-        <Link className="btn-primary" to="/events/new">
-          + New Event
-        </Link>
+        <div className="events-feed-header-actions">
+          <Link to="/rsvps">RSVPs Dashboard</Link>
+          <Link className="btn-primary" to="/events/new">
+            + New Event
+          </Link>
+        </div>
       </div>
 
       {loading && <p className="events-status">Loading events…</p>}

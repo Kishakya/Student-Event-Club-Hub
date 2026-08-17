@@ -1,14 +1,14 @@
-#events-feed,
-#event-form {
+#rsvps-dashboard,
+#rsvp-form {
   text-align: left;
   padding: 32px;
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 }
 
-.events-feed-header {
+.rsvps-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,17 +16,17 @@
   flex-wrap: wrap;
 }
 
-.events-feed-header h1 {
+.rsvps-header h1 {
   margin: 0;
 }
 
-.events-feed-header-actions {
+.rsvps-header-actions {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.events-feed-header-actions a:not(.btn-primary) {
+.rsvps-header-actions a:not(.btn-primary) {
   color: var(--accent);
   text-decoration: none;
 }
@@ -51,93 +51,100 @@
   cursor: not-allowed;
 }
 
-.events-status {
+.rsvps-filter {
+  margin-top: 20px;
+}
+
+.rsvps-filter label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text);
+  max-width: 280px;
+}
+
+.rsvps-filter select {
+  font: inherit;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.rsvps-status {
   color: var(--text);
   margin: 24px 0;
 }
 
-.events-error {
+.rsvps-error {
   color: #e0433c;
 }
 
-.event-day-group {
-  margin-top: 32px;
+.rsvps-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
 }
 
-.event-day-heading {
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text);
+.rsvps-table th,
+.rsvps-table td {
+  text-align: left;
+  padding: 10px 12px;
   border-bottom: 1px solid var(--border);
-  padding-bottom: 8px;
-  margin-bottom: 12px;
 }
 
-.event-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.event-card {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px;
-  background: var(--code-bg);
-}
-
-.event-card.event-past {
-  opacity: 0.55;
-}
-
-.event-time {
-  min-width: 84px;
-  font-weight: 600;
-  color: var(--accent);
-}
-
-.event-body {
-  flex: 1;
-}
-
-.event-body h3 {
-  margin: 0 0 4px;
-  color: var(--text-h);
-  font-size: 18px;
-}
-
-.event-body p {
-  margin: 0 0 8px;
-}
-
-.event-meta {
-  display: flex;
-  gap: 16px;
-  font-size: 14px;
+.rsvps-table th {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 12px;
   color: var(--text);
 }
 
-.event-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: flex-end;
-  font-size: 14px;
+.rsvps-table td {
+  color: var(--text-h);
 }
 
-.event-actions a {
+.status-select {
+  font: inherit;
+  font-size: 13px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.status-select.status-attending {
+  border-color: #2e9e5b;
+  color: #2e9e5b;
+}
+
+.status-select.status-waitlisted {
+  border-color: #d1912b;
+  color: #d1912b;
+}
+
+.status-select.status-cancelled {
+  border-color: #e0433c;
+  color: #e0433c;
+}
+
+.rsvps-row-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.rsvps-row-actions a {
   color: var(--accent);
   text-decoration: none;
 }
 
-.event-actions button {
+.rsvps-row-actions button {
   background: none;
   border: none;
   color: #e0433c;
@@ -146,14 +153,14 @@
   font: inherit;
 }
 
-#event-form form {
+#rsvp-form form {
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-top: 16px;
 }
 
-#event-form label {
+#rsvp-form label {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -161,8 +168,9 @@
   color: var(--text);
 }
 
-#event-form input,
-#event-form textarea {
+#rsvp-form input,
+#rsvp-form select,
+#rsvp-form textarea {
   font: inherit;
   padding: 10px 12px;
   border-radius: 8px;
@@ -171,8 +179,9 @@
   color: var(--text-h);
 }
 
-#event-form input:focus,
-#event-form textarea:focus {
+#rsvp-form input:focus,
+#rsvp-form select:focus,
+#rsvp-form textarea:focus {
   outline: none;
   border-color: var(--accent-border);
   box-shadow: 0 0 0 3px var(--accent-bg);
@@ -204,17 +213,13 @@
   font: inherit;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .form-row {
     flex-direction: column;
   }
 
-  .event-card {
-    flex-direction: column;
-  }
-
-  .event-actions {
-    flex-direction: row;
-    align-items: center;
+  .rsvps-table {
+    display: block;
+    overflow-x: auto;
   }
 }
