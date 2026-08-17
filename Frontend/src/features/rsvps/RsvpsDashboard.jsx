@@ -61,17 +61,19 @@ function RsvpsDashboard() {
 
   return (
     <section id="rsvps-dashboard">
-      <div className="rsvps-header">
-        <h1>Student RSVPs</h1>
-        <div className="rsvps-header-actions">
-          <Link to="/">Events</Link>
+      <div className="page-header glass-panel">
+        <div>
+          <h1>Student RSVPs</h1>
+          <p>Track who&apos;s attending, waitlisted, or cancelled.</p>
+        </div>
+        <div className="page-header-actions">
           <Link className="btn-primary" to="/rsvps/new">
             + New RSVP
           </Link>
         </div>
       </div>
 
-      <div className="rsvps-filter">
+      <div className="rsvps-filter glass-panel">
         <label>
           Filter by event
           <select value={eventFilter} onChange={handleFilterChange}>
@@ -85,14 +87,14 @@ function RsvpsDashboard() {
         </label>
       </div>
 
-      {loading && <p className="rsvps-status">Loading RSVPs…</p>}
-      {error && <p className="rsvps-status rsvps-error">{error}</p>}
+      {loading && <p className="status-text">Loading RSVPs…</p>}
+      {error && <p className="status-text status-error">{error}</p>}
       {!loading && !error && rsvps.length === 0 && (
-        <p className="rsvps-status">No RSVPs yet.</p>
+        <p className="status-text">No RSVPs yet.</p>
       )}
 
       {!loading && !error && rsvps.length > 0 && (
-        <table className="rsvps-table">
+        <table className="rsvps-table glass-panel">
           <thead>
             <tr>
               <th>Student</th>
@@ -127,6 +129,7 @@ function RsvpsDashboard() {
                   <Link to={`/rsvps/${rsvp.id}/edit`}>Edit</Link>
                   <button
                     type="button"
+                    className="link-danger"
                     onClick={() => handleDelete(rsvp.id, rsvp.studentName)}
                   >
                     Cancel

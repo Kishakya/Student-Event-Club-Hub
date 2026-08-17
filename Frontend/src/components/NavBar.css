@@ -1,0 +1,78 @@
+.app-nav {
+  position: sticky;
+  top: 16px;
+  z-index: 20;
+  margin: 20px clamp(16px, 4vw, 40px) 0;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-radius: 999px;
+}
+
+.app-nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-h);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.app-nav-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.app-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.app-nav-link {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.app-nav-link:hover {
+  color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.app-nav-link-active {
+  color: var(--accent);
+  background: var(--accent-bg);
+}
+
+@media (max-width: 640px) {
+  .app-nav {
+    justify-content: center;
+    border-radius: var(--radius);
+  }
+
+  .app-nav-links {
+    justify-content: center;
+    width: 100%;
+  }
+}

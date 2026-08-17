@@ -63,21 +63,22 @@ function EventsFeed() {
 
   return (
     <section id="events-feed">
-      <div className="events-feed-header">
-        <h1>Upcoming Events</h1>
-        <div className="events-feed-header-actions">
-          <Link to="/rsvps">RSVPs Dashboard</Link>
-          <Link to="/announcements">Noticeboard</Link>
+      <div className="page-header glass-panel">
+        <div>
+          <h1>Upcoming Events</h1>
+          <p>Everything happening on campus, grouped by day.</p>
+        </div>
+        <div className="page-header-actions">
           <Link className="btn-primary" to="/events/new">
             + New Event
           </Link>
         </div>
       </div>
 
-      {loading && <p className="events-status">Loading events…</p>}
-      {error && <p className="events-status events-error">{error}</p>}
+      {loading && <p className="status-text">Loading events…</p>}
+      {error && <p className="status-text status-error">{error}</p>}
       {!loading && !error && events.length === 0 && (
-        <p className="events-status">No events yet. Be the first to post one.</p>
+        <p className="status-text">No events yet. Be the first to post one.</p>
       )}
 
       {groups.map((group) => (
@@ -88,7 +89,7 @@ function EventsFeed() {
               const isPast = new Date(event.dateTime) < now
               return (
                 <li
-                  className={`event-card${isPast ? ' event-past' : ''}`}
+                  className={`event-card glass-panel${isPast ? ' event-past' : ''}`}
                   key={event.id}
                 >
                   <div className="event-time">{formatTime(event.dateTime)}</div>
@@ -104,6 +105,7 @@ function EventsFeed() {
                     <Link to={`/events/${event.id}/edit`}>Edit</Link>
                     <button
                       type="button"
+                      className="link-danger"
                       onClick={() => handleDelete(event.id, event.title)}
                     >
                       Cancel

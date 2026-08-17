@@ -36,26 +36,28 @@ function NoticeBoard() {
 
   return (
     <section id="notice-board">
-      <div className="notice-board-header">
-        <h1>Campus Noticeboard</h1>
-        <div className="notice-board-header-actions">
-          <Link to="/">Events</Link>
+      <div className="page-header glass-panel">
+        <div>
+          <h1>Campus Noticeboard</h1>
+          <p>Announcements and alerts from clubs and campus staff.</p>
+        </div>
+        <div className="page-header-actions">
           <Link className="btn-primary" to="/announcements/new">
             + New Announcement
           </Link>
         </div>
       </div>
 
-      {loading && <p className="events-status">Loading announcements…</p>}
-      {error && <p className="events-status events-error">{error}</p>}
+      {loading && <p className="status-text">Loading announcements…</p>}
+      {error && <p className="status-text status-error">{error}</p>}
       {!loading && !error && announcements.length === 0 && (
-        <p className="events-status">No announcements yet. Post the first one.</p>
+        <p className="status-text">No announcements yet. Post the first one.</p>
       )}
 
       <div className="notice-grid">
         {announcements.map((announcement) => (
           <article
-            className={`notice-card notice-priority-${announcement.priorityLevel.toLowerCase()}`}
+            className={`notice-card glass-panel notice-priority-${announcement.priorityLevel.toLowerCase()}`}
             key={announcement.id}
           >
             <div className="notice-card-header">
@@ -68,6 +70,7 @@ function NoticeBoard() {
               <Link to={`/announcements/${announcement.id}/edit`}>Edit</Link>
               <button
                 type="button"
+                className="link-danger"
                 onClick={() => handleDelete(announcement.id, announcement.title)}
               >
                 Delete
