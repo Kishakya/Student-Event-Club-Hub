@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
+import AnnouncementForm from './features/announcements/AnnouncementForm.jsx'
+import NoticeBoard from './features/announcements/NoticeBoard.jsx'
 import EventForm from './features/events/EventForm.jsx'
 import EventsFeed from './features/events/EventsFeed.jsx'
 import RsvpForm from './features/rsvps/RsvpForm.jsx'
@@ -14,6 +16,9 @@ function App() {
       <Route path="/rsvps" element={<RsvpsDashboard />} />
       <Route path="/rsvps/new" element={<RsvpForm />} />
       <Route path="/rsvps/:id/edit" element={<RsvpForm />} />
+      <Route path="/announcements" element={<NoticeBoard />} />
+      <Route path="/announcements/new" element={<AnnouncementForm />} />
+      <Route path="/announcements/:id/edit" element={<AnnouncementForm />} />
     </Routes>
   )
 }
