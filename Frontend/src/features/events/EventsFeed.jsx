@@ -67,6 +67,7 @@ function EventsFeed() {
         <h1>Upcoming Events</h1>
         <div className="events-feed-header-actions">
           <Link to="/rsvps">RSVPs Dashboard</Link>
+          <Link to="/announcements">Noticeboard</Link>
           <Link className="btn-primary" to="/events/new">
             + New Event
           </Link>
