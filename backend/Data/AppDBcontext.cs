@@ -12,4 +12,5 @@ public class AppDbContext : DbContext
     public DbSet<Event> Events { get; set; }
     public DbSet<Rsvp> Rsvps { get; set; }
     public DbSet<Announcement> Announcements { get; set; }
+    public DbSet<Club> Clubs { get; set; }
 }

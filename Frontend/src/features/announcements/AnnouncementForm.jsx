@@ -63,12 +63,14 @@ function AnnouncementForm() {
     }
   }
 
-  if (loading) return <p className="events-status">Loading…</p>
+  if (loading) return <p className="status-text">Loading…</p>
 
   return (
     <section id="announcement-form">
-      <h1>{isEditing ? 'Edit Announcement' : 'Post a New Announcement'}</h1>
-      <form onSubmit={handleSubmit}>
+      <div className="page-header glass-panel">
+        <h1>{isEditing ? 'Edit Announcement' : 'Post a New Announcement'}</h1>
+      </div>
+      <form onSubmit={handleSubmit} className="glass-form glass-panel">
         <label>
           Title
           <input
@@ -101,10 +103,15 @@ function AnnouncementForm() {
           </select>
         </label>
 
-        {error && <p className="events-status events-error">{error}</p>}
+        {error && <p className="status-text status-error">{error}</p>}
 
         <div className="form-actions">
-          <button type="button" onClick={() => navigate(-1)} disabled={saving}>
+          <button
+            type="button"
+            className="btn-secondary"
+            onClick={() => navigate(-1)}
+            disabled={saving}
+          >
             Cancel
           </button>
           <button type="submit" className="btn-primary" disabled={saving}>

@@ -74,12 +74,14 @@ function RsvpForm() {
     }
   }
 
-  if (loading) return <p className="rsvps-status">Loading…</p>
+  if (loading) return <p className="status-text">Loading…</p>
 
   return (
     <section id="rsvp-form">
-      <h1>{isEditing ? 'Edit RSVP' : 'Register for an Event'}</h1>
-      <form onSubmit={handleSubmit}>
+      <div className="page-header glass-panel">
+        <h1>{isEditing ? 'Edit RSVP' : 'Register for an Event'}</h1>
+      </div>
+      <form onSubmit={handleSubmit} className="glass-form glass-panel">
         <label>
           Event
           <select
@@ -148,10 +150,15 @@ function RsvpForm() {
           </label>
         )}
 
-        {error && <p className="rsvps-status rsvps-error">{error}</p>}
+        {error && <p className="status-text status-error">{error}</p>}
 
         <div className="form-actions">
-          <button type="button" onClick={() => navigate(-1)} disabled={saving}>
+          <button
+            type="button"
+            className="btn-secondary"
+            onClick={() => navigate(-1)}
+            disabled={saving}
+          >
             Cancel
           </button>
           <button type="submit" className="btn-primary" disabled={saving}>
